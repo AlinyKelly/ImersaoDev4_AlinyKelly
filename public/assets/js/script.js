@@ -6,18 +6,18 @@ function calcularMedia(){
     var media = (nota1+nota2+nota3)/3;
     
     if(nota1 > 10 || nota2 > 10 || nota3 > 10){
-        alert("Nota máxima deve ser 10");
+        document.querySelector('#resultado').innerHTML = `Nota máxima deve ser 10`;
     } else if (nota1 < 0 || nota2 < 0 || nota3 < 0){
-        alert("Nota mínima deve ser 0");
+        document.querySelector('#resultado').innerHTML = `Nota mínima deve ser 0`;
     } else {
         if(media == 10){
-            document.querySelector('.resultado').innerHTML = `Parabéns! Você é 10 e está aprovado.`;
+            document.querySelector('#resultado').innerHTML = `Parabéns! Você é 10 e está aprovado.`;
         } else if(media >= 6){
-            document.querySelector('.resultado').innerHTML = `Aprovado.`;
+            document.querySelector('#resultado').innerHTML = `Aprovado.`;
         } else if(media < 6 && media >= 4){
-            document.querySelector('.resultado').innerHTML = `Tente outra vez. Você está de Recuperação.`;
+            document.querySelector('#resultado').innerHTML = `Tente outra vez. Você está de Recuperação.`;
         } else {
-            document.querySelector('.resultado').innerHTML = `Infelizmente, você está Reprovado.`;
+            document.querySelector('#resultado').innerHTML = `Infelizmente, você está Reprovado.`;
         }
     }
 }

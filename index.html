@@ -1,62 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de média</title>
-    <link rel="stylesheet" href="./public/assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>Aliny Kelly - Imersão Dev Alura</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="./public/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Meu CSS -->
+  <link rel="stylesheet" href="./public/assets/css/style.css">
+
+  <!-- Favicons -->
+  <!--
+  <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
+  <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+  <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+  <meta name="theme-color" content="#7952b3">
+
+
+  <script type="text/javascript"
+    src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=PaJH-QnUojjxrAA3jkSGG48SRcClWAlemxwI5a79O2Xdzuhy1e6Re7JBHe2xSWI-TY9oxBzqGhCBGApqPfSX4U8kTQyIPYmbD_fLyTQMuEc"
+    charset="UTF-8"></script>
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://me.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9nZXRib290c3RyYXAuY29tL2RvY3MvNS4xL2V4YW1wbGVzL2FsYnVtLw" />
+  -->
+    <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
-    <header id="header-menu">
-        <section id="header-esquerda">
-            <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
-                class="page-logo" alt="Logo da Imersão Dev da Alura">
-        </section>
 
-        <nav id="header-direita">
-            <a href="https://alura.com.br/" target="_blank">
-                <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
-            </a>
-            <a href="https://github.com/AlinyKelly/calculadoraMedia_ImersaoDev4" target="_blank">
-                <img src="./public/assets/images/logo.png" alt="Logo da Aliny Kelly com link para o github"
-                    class="aliny-logo">
-            </a>
-        </nav>
-    </header>
-    <div class="container">
-        <h1 class="page-title">
-            Calculadora de média</h1>
-        <p class="page-subtitle">
-            Descubra qual a sua média de nota de todas as provas!
-        </p>
-        <div class="formulario-notas">
-            <div class="formulario-field">
-                <label for="nota1">Insira a primeira nota: </label>
-                <input id="nota1" name="nota1" type="number" min="0" max="10">
-            </div>
-            <div class="formulario-field">
-                <label for="nota2">Insira a segunda nota: </label>
-                <input id="nota2" name="nota2" type="number" min="0" max="10">
-            </div>
-            <div class="formulario-field">
-                <label for="nota3">Insira a terceira nota: </label>
-                <input id="nota3" name="nota3" type="number" min="0" max="10">
-            </div>
-
-            <button class="botao-calcular-media" onclick="calcularMedia()">Calcular Média</button>
-
-            <p class="resultado"></p>
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">Sobre</h4>
+            <p class="text-muted">Aqui você encontrará o resultado de todos os projetos realizados durante a 4ª edição
+              da Imersão Dev da Alura, que eu participei durante os dias 07/03/22 a 18/03/22, foram 10 dias de muito
+              estudo, dedicação e aprendizado.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contato</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://www.linkedin.com/public-profile/in/alinykelly" class="text-white" target="_blank">LinkedIn</a></li>
+              <li><a href="https://github.com/AlinyKelly" class="text-white" target="_blank">GitHub</a></li>
+              <li><a href="https://www.instagram.com/alinykellyfs" class="text-white" target="_blank">Instagram</a></li>
+          </ul>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>Aliny Kelly</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">Meus projetos</h1>
+          <p class="lead text-muted">Mergulhe fundo em cada projeto feito durante a imersão.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
         
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <!-- Card com imagem teste -->
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="./public/assets/images/calcMediaBg.png" class="bd-placeholder-img card-img-top" width="100%" height="100%" focusable="false" alt="Calculadora de Média">
+              
+              <div class="card-body">
+                <h5 class="card-title">Calculadora de Média</h5>
+                <p class="card-text">Neste programa, focamos nas primeiras ferramentas principais de qualquer linguagem
+                  de programação: variáveis, operadores, arredondamento e console.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="calcMedia.html" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly/pen/PoOgLoV" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Aula 1</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="./public/assets/images/conversorTempBG.png" class="card-img-top" width="100%" height="100%" focusable="false" alt="Conversor de Temperatura">
+              
+              <div class="card-body">
+                <h5 class="card-title">Conversor de Temperatura</h5>
+                <p class="card-text">Utilizando os conhecimentos adquiridos na aula 1, topei o desafio para a criação de
+                  um conversor de temperaturas entre farenheit e celcius.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="conversorTemperatura.html" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly/pen/WNdNVdq" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Desafio Aula 1</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="card shadow-sm">
+              <img src="./public/assets/images/conversorMoedasBG.png" class="card-img-top" width="100%" height="100%" focusable="false" alt="Conversor de Moedas">
+
+              <div class="card-body">
+                <h5 class="card-title">Conversor de Moedas</h5>
+                <p class="card-text">Em breve.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Aula 2</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Em breve</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Em
+                  breve</text>
+              </svg>
+
+              <div class="card-body">
+                <p class="card-text">Proximo projeto em breve.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Aula</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Em breve</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Em
+                  breve</text>
+              </svg>
+
+              <div class="card-body">
+                <p class="card-text">Proximo projeto em breve.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Aula</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Em breve</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Em
+                  breve</text>
+              </svg>
+
+              <div class="card-body">
+                <p class="card-text">Proximo projeto em breve.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Aula</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Em breve</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Em
+                  breve</text>
+              </svg>
+
+              <div class="card-body">
+                <p class="card-text">Proximo projeto em breve.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Aula</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Em breve</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Em
+                  breve</text>
+              </svg>
+
+              <div class="card-body">
+                <p class="card-text">Proximo projeto em breve.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Aula</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Em breve</title>
+                <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Em
+                  breve</text>
+              </svg>
+
+              <div class="card-body">
+                <p class="card-text">Proximo projeto em breve.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="#" class="btn btn-sm btn-outline-secondary">View</a>
+                    <a href="https://codepen.io/alinykelly" class="btn btn-sm btn-outline-secondary"
+                      target="_blank">CodePen</a>
+                  </div>
+                  <small class="text-muted">Aula</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
 
+  </main>
+
+  <footer class="text-muted py-5">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">Back to top</a>
+      </p>
+      <p class="mb-0">Conheça a Alura.</p>
+      <p>
+        <a href="https://imersao.dev/" class="btn btn-secondary my-2"><img
+            src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg"
+            class="page-logo" alt="Logo Imersao DEV"></a>
+        <a href="https://www.alura.com.br/" class="btn btn-secondary my-2"><img
+            src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo"></a>
+      </p>
+
+      <p class="mb-1">Feito com amor e &copy; Bootstrap por Aliny Kelly.</p>
+
+    </div>
+  </footer>
 
 
+  <script src="./public/assets/js/bootstrap.bundle.min.js"></script>
 
-    <script src="./public/assets/js/script.js"></script>
 </body>
 
 </html>
