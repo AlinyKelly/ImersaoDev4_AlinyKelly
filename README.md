@@ -1,2 +1,3 @@
-# calculadoraMedia_ImersaoDev4
-Calculadora criada na primeira aula da Imersão Dev 4 da Alura.
+# Meus projetos ImersãoDev_ Alura
+
+Mergulhe fundo em cada projeto feito durante a imersão.
